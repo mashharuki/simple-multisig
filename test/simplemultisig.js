@@ -1,3 +1,5 @@
+// テストコード
+//コントラクトをインスタンス化する。
 var SimpleMultiSig = artifacts.require("./SimpleMultiSig.sol")
 var TestRegistry = artifacts.require("./TestRegistry.sol")
 var lightwallet = require('eth-lightwallet')
