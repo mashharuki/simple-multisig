@@ -1,8 +1,10 @@
+// コンパイラーバージョンを指定
 pragma solidity ^0.4.24;
 
 // solidityによるシンプルなマルチシグコードコントラクト
 contract SimpleMultiSig {
-
+ 
+  // EIP712は、データ署名の標準
   // EIP712 Precomputed hashes:
   // keccak256("EIP712Domain(string name,string version,uint256 chainId,address verifyingContract,bytes32 salt)")
   bytes32 constant EIP712DOMAINTYPE_HASH = 0xd87cd6ef79d4e2b95e15ce8abf732db51ec771f1ca2edccf22a46c729ac56472;
@@ -83,7 +85,6 @@ contract SimpleMultiSig {
     nonce = nonce + 1;
     bool success = false;
     // 呼び出し関数の結果が、成功したかチェックする。
-    // アセンブリー言語
     assembly { success := call(gasLimit, destination, value, add(data, 0x20), mload(data), 0, 0) }
     // 成功していなければ処理を終了する。
     require(success);

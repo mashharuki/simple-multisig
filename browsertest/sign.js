@@ -10,7 +10,7 @@ function parseSignature(signature) {
   var s = signature.substring(64, 128);
   // 128~130番目を変数vに格納する
   var v = signature.substring(128, 130);
-  // 戻りを返す。
+  // 戻り値を返す。
   return {
       r: "0x" + r,
       s: "0x" + s,
